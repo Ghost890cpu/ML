@@ -5,7 +5,6 @@ import seaborn as sns
 from sklearn.datasets import fetch_california_housing
 
 data=fetch_california_housing()
-data
 
 df=pd.DataFrame(data.data,columns=data.feature_names)
 df['Target']=data.target
@@ -35,9 +34,6 @@ print(df.head())
 print("\nSummary Statistics:")
 print(df.describe())
 
-summary_explaination ="""
-My Name is Vinay A and Iam from Davanagere,iam currently persuing my 
-BE in Artificial Intelligence And Data Science At SIET,Tumkur."""
 print("\n Summary Explaination")
 print(summary_explaination)
 
@@ -64,3 +60,13 @@ plt.show()
 sns.pairplot(df[['MedInc','HouseAge','AveRooms','Target']],
 diag_kind='kde')
 plt.show()
+
+print("\nKey Insights:") 
+print("1. The dataset has", df.shape[0], "rows and", df.shape[1], "columns.") 
+print("2. No missing values were found in the dataset.") 
+print("3. Histograms show skewed distributions in some features like 
+'MedInc'.") 
+print("4. Boxplots indicate potential outliers in 'AveRooms' and 
+'AveOccup'.") 
+print("5. Correlation heatmap shows 'MedInc' has the highest correlation with 
+house prices.")
